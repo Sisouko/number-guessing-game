@@ -1,7 +1,7 @@
-# number-guessing-game
+number-guessing-game????????
 This project is a number guessing game where the program generates a random number and the user attempts to guess it, receiving feedback like “too high” or “too low” until they win.
 ***********************************************
-*******************************************************************************
+***********************************************
 ***********************************************
 **********-------A simple and interactive Number Guessing Game where the player tries to guess a randomly generated number. The game provides hints after each attempt to guide the player toward the correct answer.--------------------------------------------------------------:)
 
