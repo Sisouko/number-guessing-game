@@ -1,6 +1,5 @@
 
-//* Number Guessing Game 
-
+# Number Guessing Game
 
 ## 1. Global State Variables
 
@@ -23,7 +22,7 @@ let bestScores = {};     // Stores best attempts per difficulty (keyed by maxNum
 function rand(max) {
   return Math.floor(Math.random() * max) + 1;
 }
-```
+``
 Generates a random integer between 1 and `max` (inclusive).
 
 ---
