@@ -1,19 +1,21 @@
-let secret = 0;
-let maxNum = 100;
-let attempts = 0;
-let low = 1, high = 100;
-let gameActive = false;
-let timerInterval = null;
-let timerSeconds = 0;
-let bestScores = {};
-
+let secret = 0; // The hidden number to guess
+let maxNum = 100; // Upper bound (changes with difficulty)
+let attempts = 0; // Number of guesses made
+let low = 1, high = 100; // Current possible range after hints
+let gameActive = false; // Whether a game is in progress
+let timerInterval = null; // Holds the setInterval ID for the timer
+let timerSeconds = 0; // Elapsed seconds
+let bestScores = {}; // Stores best attempts per difficulty
+// KEYED BY maxNum
+ 
+//******** Generates a random integer between 1 and `max` (inclusive).
 function rand(max) { return Math.floor(Math.random() * max) + 1; }
 
-function startGame() {
-  secret = rand(maxNum);
+function startGame() { 
+  secret = rand(maxNum);// Picks a new `secret` number using `rand(maxNum)`.
   attempts = 0;
-  low = 1;
-  high = maxNum;
+  low = 1; //Resets attempts, range bounds (`low`, `high`)
+  high = maxNum; // and timer.
   gameActive = true;
   timerSeconds = 0;
 
