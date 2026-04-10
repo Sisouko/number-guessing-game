@@ -26,10 +26,8 @@ HTML / CSS / JAVASCRIPT (LOG...of.this GAME)
 5-------------The total number of attempts is displayed at the end.
 
 :)
-:(
-
-
-
+:)
+:)
 
 (MORE proj)|||||||||||||||||SOOOOOOOOON!!!!
 
