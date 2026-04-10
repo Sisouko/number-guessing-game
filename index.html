@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Number Guessing Game</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-tag">Brain Teaser</div>
+    <h1>Guess the <em>Number</em></h1>
+    <p class="instructions">I'm thinking of a number. Can you find it?</p>
+  </header>
+
+  <!-- DIFFICULTY -->
+  <div class="card">
+    <div class="card-label">Difficulty</div>
+    <div class="diff-row">
+      <button class="diff-btn" data-max="50" onclick="setDifficulty(this)">Easy<br><small style="font-weight:400;font-size:0.7rem;opacity:0.7">1–50</small></button>
+      <button class="diff-btn active" data-max="100" onclick="setDifficulty(this)">Normal<br><small style="font-weight:400;font-size:0.7rem;opacity:0.7">1–100</small></button>
+      <button class="diff-btn" data-max="1000" onclick="setDifficulty(this)">Hard<br><small style="font-weight:400;font-size:0.7rem;opacity:0.7">1–1000</small></button>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="card">
+    <div class="stats-row">
+      <div class="stat-box">
+        <div class="stat-num" id="attemptsNum">0</div>
+        <div class="stat-lbl">Attempts</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num timer" id="timerNum">0:00</div>
+        <div class="stat-lbl">Time</div>
+      </div>
+      <div class="stat-box best">
+        <div class="stat-num" id="bestNum">—</div>
+        <div class="stat-lbl">Best Score</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RANGE INDICATOR -->
+  <div class="card">
+    <div class="card-label">Search Range</div>
+    <div class="range-track" id="rangeTrack">
+      <div class="range-fill" id="rangeFill" style="left:0%;width:100%"></div>
+      <div class="range-marker" id="rangeMarker" style="left:50%; display:none"></div>
+    </div>
+    <div class="range-labels">
+      <span id="rangeLow">1</span>
+      <span class="mid" id="rangeMid"></span>
+      <span id="rangeHigh" id="rangeHighLbl">100</span>
+    </div>
+  </div>
+
+  <!-- INPUT -->
+  <div class="card">
+    <div class="card-label">Your Guess</div>
+    <div class="input-row">
+      <input type="number" id="guessInput" min="1" max="100" placeholder="?" autocomplete="off">
+      <button class="btn-submit" id="btnSubmit" onclick="checkGuess()">Check</button>
+    </div>
+    <div class="hint-box" id="hintBox" style="margin-top:0.75rem;">
+      <span class="hint-icon">🎯</span>
+      <span id="hintText">Enter a number and hit Check!</span>
+    </div>
+    <button class="btn-giveup" id="btnGiveup" onclick="giveUp()">Give up — show the answer</button>
+  </div>
+
+  <!-- GAVE UP MESSAGE -->
+  <div class="gaveup-msg" id="gaveupMsg">
+    The number was <strong id="revealNum">?</strong>. Better luck next time!
+    <br><button class="btn-again" style="margin-top:0.8rem;background:var(--low);border-color:var(--low);box-shadow:0 3px 0 #922b21" onclick="newGame()">Try Again</button>
+  </div>
+
+  <!-- WIN CARD -->
+  <div class="result-card" id="resultCard">
+    <div class="result-trophy" id="resultTrophy">🏆</div>
+    <div class="result-title">You found it!</div>
+    <div class="result-sub" id="resultSub">The number was <strong id="winNum">?</strong>. You got it in <strong id="winAttempts">?</strong> guess(es) in <strong id="winTime">?</strong>.</div>
+    <div class="rating-badge" id="ratingBadge">—</div>
+    <button class="btn-again" onclick="newGame()">Play Again</button>
+  </div>
+
+  <!-- HISTORY -->
+  <div class="card">
+    <div class="card-label">Guess History</div>
+    <ul class="history-list" id="historyList">
+      <li class="hist-empty" id="histEmpty">No guesses yet — get started!</li>
+    </ul>
+  </div>
+
+</div>
+
+</body>
+</html>
